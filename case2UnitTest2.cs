@@ -8,6 +8,7 @@ using NUnit.Framework;
 using System.Threading;
 using OpenQA.Selenium.Interactions;
 
+
 namespace Assessment_Selenium
 {
     [TestClass]
@@ -18,7 +19,8 @@ namespace Assessment_Selenium
         public void TestMethod_1()
         {
             IWebDriver driver;
-            driver = new ChromeDriver("C:\\SeleniumJars"); 
+            driver = new ChromeDriver("C:\\SeleniumJars");
+            
 
             string url = "http://www.youcandealwithit.com/"; //To open website we used driver.url 
             driver.Url = url;
@@ -66,11 +68,11 @@ namespace Assessment_Selenium
             string webpage_title1 = driver.Title.ToString();        //To check title is same as link text
             if (webpage_title1.Contains(calculator_title))
             {
-                Console.WriteLine(webpage_title + " is same as " + calculator_title + "!!");
+                Console.WriteLine(webpage_title1 + " is same as " + calculator_title + "!!");
             }
             else
             {
-                Console.WriteLine(webpage_title + " is not same as " + calculator_title + "!!");
+                Console.WriteLine(webpage_title1 + " is not same as " + calculator_title + "!!");
             }
 
             driver.FindElement(By.LinkText(budget_title)).Click();       // To click on Budget Calculators 
@@ -78,11 +80,11 @@ namespace Assessment_Selenium
             string webpage_title2 = driver.Title.ToString();        //To check title is same as link text
             if (webpage_title2.Contains(budget_title))
             {
-                Console.WriteLine(webpage_title + " is same as " + budget_title + "!!");
+                Console.WriteLine(webpage_title2 + " is same as " + budget_title + "!!");
             }
             else
             {
-                Console.WriteLine(webpage_title + " is not same as " + budget_title + "!!");
+                Console.WriteLine(webpage_title2 + " is not same as " + budget_title + "!!");
             }
 
             driver.FindElement(By.Id(foodid)).SendKeys(foodvalue);      // next 5 operations are for entering data
